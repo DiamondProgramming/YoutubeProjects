@@ -4,6 +4,7 @@ import numpy as np
 import os
 
 # CREDITS: DiamondPlayer(SMH), COMPLETED ON 26/7/23
+# INSPIRTAION VIDEO: https://youtu.be/5yPeKQzCPdI (THEIR CODE WAS NOT WORKING FOR ME, SO WROTE MY OWN)
 # NOTE: HAVE A FOLDER CALLED 'images' IN THE SAME DIRECTORY WITH ALL THE IMAGES OF THE KNOWN FACES
 
 # START CAPTURING VIDEO FROM WEBCAM
@@ -67,7 +68,7 @@ while True:
         face_encodings = face_recognition.face_encodings(small_frame_rgb,face_locations)
         face_names = []
 
-        # COMARING FACE IN VIDEO WITH KNWON FACES
+        # COMPARING FACE IN VIDEO WITH KNWON FACES
         for face_encoding in face_encodings:
             matches = face_recognition.compare_faces(face_encodings_known, face_encoding)
             face_distances = face_recognition.face_distance(face_encodings_known, face_encoding)
